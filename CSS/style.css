@@ -1,5 +1,6 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* Variables CSS, color palette */
 :root {
@@ -24,6 +25,13 @@
 body {
   min-height: 100vh;
   font-family: "Dosis", Arial;
+  background: var(--white-color);
+  transition: .3s;
+}
+
+bodyAlt {
+  min-height: 100vh;
+  font-family: "Press Start 2P", "Dosis", Arial;
   background: var(--white-color);
   transition: .3s;
 }
@@ -90,6 +98,15 @@ ul {
 .header-menu__link {
   font-weight: 500;
   font-size: 18px;
+  color: var(--text-color);
+  display: inline-flex;
+  position: relative;
+  transition: .3s;
+}
+
+.header-menu__linkAlt {
+  font-weight: 500;
+  font-size: 8px;
   color: var(--text-color);
   display: inline-flex;
   position: relative;
@@ -188,6 +205,14 @@ ul {
   font-weight: 500;
   font-size: 24px;
   color: var(--gray-color);
+  margin-bottom: 25px;
+}
+
+.intro__positionAlt {
+  display: block;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--text-color);
   margin-bottom: 25px;
 }
 
