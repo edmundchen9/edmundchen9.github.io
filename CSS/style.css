@@ -389,14 +389,14 @@ height: 100px;
 margin: auto;
 overflow: hidden;
 position: relative;
-width: 480px;
+width: 360px;
 justify-content: right;
 }
 .slider::before, .slider::after {
 background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 height: 100px;
 position: absolute;
-width: 200px;
+width: 150px;
 z-index: 2;
 }
 .slider::after {
@@ -418,6 +418,17 @@ width: calc(125px * 6);
 height: 100px;
 width: 250px;
 }
+
+.skills_stats {
+  background: none;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+  justify-content: right;
+  }
+
 
 /* Black Styles */
 
