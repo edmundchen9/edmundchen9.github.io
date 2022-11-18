@@ -718,3 +718,83 @@ scroll-padding: 0 24px;
   }
 }
   /* colors to use #ED4D6E (red), #C3BEF7 (lilac), #FBB13C (orange), #0C120C (black chocolate, p nice), #454545 onix, #187795 teal blue */
+
+/* create a bar that animates from left to right to a certain point */
+
+.containerBar{
+  width: 75%;
+  margin: 0 auto;
+  background-color: #c3bef7;
+}
+.containerBar_flex {
+  max-width: 1100px;
+  padding:  10px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: var(--primary-color);
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before{
+  background-color: var(--primary-color);
+}
+.bar.back::before{
+  background-color: #FBB13C;
+}
+
+.bar.learning::before{
+  width: calc(20% - 10px);
+}
+.bar.basic::before{
+  width: calc(40% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(60% - 10px);
+}
+.bar.advanced::before{
+  width: calc(80% - 10px);
+}
+.bar.expert::before{
+  width: calc(100% - 10px);
+}
