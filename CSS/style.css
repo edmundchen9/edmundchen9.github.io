@@ -7,13 +7,45 @@
   --primary-color: #7ede90;
   --white-color: #FFFFFF;
   --text-color: #484848;
-  --gray-color: #888888;
+  --gray-color: #636363;
   --invert-primary-color: #7ede90;
   --invert-text-color: #FFFFFF;
   --invert-bg-color: #2B3137;
   --square-color: #7ede90;
 }
 
+/* MIGHT WANT TO MAKE A REALLY COOL ANCHOR POINT SCROLL, DO */
+html {
+	scroll-behavior: smooth;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+ @media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  background-color: #7ede90;
+  background-image: linear-gradient(#7ede90, #fbb13c);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  z-index: -1;
+}
+::-webkit-scrollbar-track {
+  background: var(--white-color)
+}
+.is-black::-webkit-scrollbar-track {
+  background: var(--invert-bg-color)
+}
 /* Main Styles */
 
 * {
@@ -43,6 +75,27 @@ a {
 ul {
   list-style: none;
 }
+
+.is-black .h1 {
+color: var(--white-color);
+}
+
+.is-black .h2 {
+color: var(--white-color);
+}
+.is-black .h3 {
+  color: var(--white-color);
+}
+.is-black .h4 {
+  color: var(--white-color);
+  }
+.is-black .h5 {
+  color: var(--white-color);
+  }
+.is-black .p{
+  color: var(--white-color);
+  }
+
 
 .center {
   margin: auto;
@@ -75,12 +128,14 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header_body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 
 .header_logo {
@@ -88,20 +143,24 @@ ul {
   font-size: 28px;
   color: var(--text-color);
   transition: .3s;
+  z-index: 1;
 }
 
 .header_rightside {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .header-menu_list {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .header-menu_item {
   padding: 0 20px;
+  z-index: 1;
 }
 
 .header-menu_link {
@@ -111,6 +170,7 @@ ul {
   display: inline-flex;
   position: relative;
   transition: .3s;
+  z-index: 1;
 }
 
 .header-menu_linkAlt {
@@ -120,6 +180,7 @@ ul {
   display: inline-flex;
   position: relative;
   transition: .3s;
+  z-index: 1;
 }
 
 .header-menu_link:after {
@@ -132,6 +193,7 @@ ul {
   background: var(--primary-color);
   border-radius: 2px;
   transition: .3s;
+  z-index: 1;
 }
 
 .header-menu_link:hover:after {
@@ -206,6 +268,18 @@ ul {
 .intro_title span {
   color: var(--primary-color);
   transition: .3s;
+}
+
+.intro_position {
+  display: block;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--gray-color);
+  margin-bottom: 25px;
+}
+
+.is-black .intro_position {
+  color: var(--white-color)
 }
 
 .intro_position {
@@ -395,9 +469,8 @@ margin: auto;
 overflow: hidden;
 position: absolute;
 width: 400px;
-justify-content: left;
+justify-content: center;
 display: block;
-
 }
 
 .slider::before, .slider::after {
