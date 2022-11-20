@@ -6,7 +6,7 @@
 :root {
   --primary-color: #7ede90;
   --white-color: #FFFFFF;
-  --text-color: #484848;
+  --text-color: #303030;
   --gray-color: #636363;
   --invert-primary-color: #7ede90;
   --invert-text-color: #FFFFFF;
@@ -229,6 +229,8 @@ color: var(--white-color);
   min-height: calc(80vh - 80px);
   display: flex;
   align-items: center;
+  font-weight: 500;
+  margin-bottom: 200px;
 }
 
 .intro_body {
@@ -256,7 +258,7 @@ color: var(--white-color);
 }
 
 .intro_title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 64px;
   line-height: 1.2;
   color: var(--text-color);
@@ -765,6 +767,100 @@ scroll-padding: 0 24px;
 .bar.expert::before{
   width: calc(100% - 10px);
 }
+
+/* Typewriter effect CODE: https://www.codeply.com/go/orizmNWvT3/css-only-typing-animation-with-multiple-words */
+  .typewriter {
+    display: flexbox;
+}
+
+.typewriter .static {
+    color: var(--text-color);
+    font-size: 48px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.is-black .typewriter .static {
+    color: white;
+    font-size: 48px;
+    font-weight: 500;
+}
+.typewriter span {
+    color: #7ede90;
+    font-weight: 800;
+    width: 100%;
+}
+
+.typewriter span1 {
+    color: #fbb13c;
+    font-weight: 800;
+    width: 100%;
+}
+
+
+.typewriter .types{
+    line-height: 90px;
+    height: 80px;
+    overflow: hidden; 
+    margin-top: -10px;
+}
+
+.types li{
+    list-style: none;
+    font-weight: 800;
+    font-size: 48px;
+    position:relative;
+    top: 0;
+    animation: slide 16s steps(4)
+    infinite;
+    }
+
+.types li {
+    position: relative;
+}
+
+.types li::after{
+    content: "";
+    position:absolute;
+    font-size: 36px;
+    height: 100%;
+    width: 100%;
+    animation: typing 4s steps(17) 
+    infinite;
+    border-left: 3px solid #fbb13c;
+    left: 0;
+    background: white;
+    }
+
+.is-black .types li::after{
+    content: "";
+    position:absolute;
+    font-size: 36px;
+    height: 100%;
+    width: 100%;
+    animation: typing 4s steps(17) 
+    infinite;
+    border-left: 3px solid #fbb13c;
+    left: 0;
+    background: var(--invert-bg-color);
+        }
+
+  /* The typing effect */
+  @keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
+  }
+
+  @keyframes slide{
+    100%{
+        top: -360px;
+    }
+  }
 
 
 /* Media Queries */
