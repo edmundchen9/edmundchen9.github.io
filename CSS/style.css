@@ -17,6 +17,7 @@
 /* MIGHT WANT TO MAKE A REALLY COOL ANCHOR POINT SCROLL, DO */
 html {
 	scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 /**
@@ -27,6 +28,7 @@ html {
 		scroll-behavior: auto;
 	}
 }
+
 
 /* scrollbar */
 ::-webkit-scrollbar {
@@ -120,7 +122,7 @@ color: var(--white-color);
 
 /* top bar HEADER */
 .header {
-  padding: 23px 0;
+  padding: 10px 0;
   background: var(--white-color);
   box-shadow: 0px -2px 10px rgba(0,0,0,.1);
   transition: .3s;
@@ -729,8 +731,8 @@ scroll-padding: 0 24px;
   border-radius: 20px;
   margin-bottom: 5px;
   font-size: 14px;
-  color: #FFF;
-  font-weight: bold;
+  color: var(--invert-bg-color);
+  font-weight: 900;
 
 }
 .bar::before{
@@ -803,6 +805,7 @@ scroll-padding: 0 24px;
     height: 80px;
     overflow: hidden; 
     margin-top: -10px;
+    margin-right: 50px;
 }
 
 .types li{
