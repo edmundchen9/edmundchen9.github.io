@@ -49,6 +49,9 @@ html {
   background: var(--invert-bg-color)
 }
 /* Main Styles */
+.text-center {
+  text-align: center;
+}
 
 * {
   margin: 0;
@@ -235,6 +238,13 @@ color: var(--white-color);
   margin-bottom: 200px;
 }
 
+.skillsIntro {
+  min-height: calc(80vh - 80px);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
 .intro_body {
   background: transparent;
   display: flex;
@@ -247,6 +257,7 @@ color: var(--white-color);
   max-width: 500px;
   width: 100%;
   padding-right: 20px;
+  margin-right: 10%;
 }
 
 .intro_img {
@@ -321,7 +332,7 @@ color: var(--white-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 0;
+  padding: 30px 150px;
   position: relative;
   height: auto;
 }
@@ -333,6 +344,7 @@ color: var(--white-color);
   display: inline-block;
   vertical-align: top;
   display: inline-block;
+  margin-right: 25%;
 }
 /* Have two elements align side by side and collapse to columns when shrinking width */
 .skills_img {
@@ -472,7 +484,7 @@ height: 200px;
 margin: auto;
 overflow: hidden;
 position: absolute;
-width: 400px;
+width: 35%;
 justify-content: center;
 display: block;
 }
@@ -847,6 +859,39 @@ scroll-padding: 0 24px;
     left: 0;
     background: var(--invert-bg-color);
         }
+
+
+/* Three evenly spaced boxes that are centered center. Each box will have an icon, number, and description */
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 5rem 5rem;
+}
+
+.icon-box .box {
+  flex: 1 1 300px;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.icon-box .box:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box .box .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fbb13c;
+}
 
   /* The typing effect */
   @keyframes typing {
