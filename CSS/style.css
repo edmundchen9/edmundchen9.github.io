@@ -940,6 +940,10 @@ scroll-padding: 0 24px;
   .btn .bx {
     font-size: 20px;
   }
+  .typewriter {
+    display: flexbox;
+    justify-content: center;
+}
 }
 
 @media (max-width: 767px) {
@@ -1010,6 +1014,9 @@ scroll-padding: 0 24px;
     justify-content: center;
     flex-direction: column;
   }
+  .typewriter {
+    margin: 0 17.5%;
+}
 }
 
 .padding{
