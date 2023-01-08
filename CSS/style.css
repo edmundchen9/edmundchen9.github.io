@@ -1022,3 +1022,49 @@ scroll-padding: 0 24px;
 .padding{
   padding: 30px;
 }
+
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px; /* negative margin of half the gutter width to compensate for the gutter */
+}
+
+.item {
+  width: calc(50% - 20px); /* 50% of the container width minus the gutter width */
+  max-width: 300px;
+  margin: 10px; /* gutter width */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* slight drop shadow */
+  transition: all 0.3s ease; /* smooth transition on hover */
+}
+
+.item:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* stronger drop shadow on hover */
+  transform: scale(1.05); /* slight zoom on hover */
+}
+
+.item img {
+  width: 100%; /* image should fill the entire item */
+  height: auto;
+}
+
+.item .description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.8); /* semi-transparent white background for the text */
+  color: #333; /* dark text color */
+  visibility: hidden; /* hide the text by default */
+  opacity: 0; /* make the text invisible by default */
+  transition: all 0.3s ease; /* smooth transition on hover */
+  display: flex; /* enable flexbox layout */
+  align-items: center; /* center items vertically */
+  justify-content: center; /* center items horizontally */
+  font-weight: bold;
+}
+
+.item:hover .description {
+  visibility: visible; /* show the text on hover */
+  opacity: 1; /* make the text visible on hover */
+}
