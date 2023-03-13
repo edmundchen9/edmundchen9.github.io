@@ -6,15 +6,52 @@
 :root {
   --primary-color: #7ede90;
   --white-color: #FFFFFF;
-  --text-color: #484848;
-  --gray-color: #888888;
+  --text-color: #303030;
+  --gray-color: #636363;
   --invert-primary-color: #7ede90;
   --invert-text-color: #FFFFFF;
   --invert-bg-color: #2B3137;
   --square-color: #7ede90;
 }
 
+/* MIGHT WANT TO MAKE A REALLY COOL ANCHOR POINT SCROLL, DO */
+html {
+	scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/**
+ * Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+ @media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  background-color: #7ede90;
+  background-image: linear-gradient(#7ede90, #fbb13c);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  z-index: -1;
+}
+::-webkit-scrollbar-track {
+  background: var(--white-color)
+}
+.is-black::-webkit-scrollbar-track {
+  background: var(--invert-bg-color)
+}
 /* Main Styles */
+.text-center {
+  text-align: center;
+}
 
 * {
   margin: 0;
@@ -44,6 +81,27 @@ ul {
   list-style: none;
 }
 
+.is-black .h1 {
+color: var(--white-color);
+}
+
+.is-black .h2 {
+color: var(--white-color);
+}
+.is-black .h3 {
+  color: var(--white-color);
+}
+.is-black .h4 {
+  color: var(--white-color);
+  }
+.is-black .h5 {
+  color: var(--white-color);
+  }
+.is-black .p{
+  color: var(--white-color);
+  }
+
+
 .center {
   margin: auto;
   width: 50%;
@@ -67,7 +125,7 @@ ul {
 
 /* top bar HEADER */
 .header {
-  padding: 23px 0;
+  padding: 10px 0;
   background: var(--white-color);
   box-shadow: 0px -2px 10px rgba(0,0,0,.1);
   transition: .3s;
@@ -75,12 +133,14 @@ ul {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header_body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 
 .header_logo {
@@ -88,20 +148,24 @@ ul {
   font-size: 28px;
   color: var(--text-color);
   transition: .3s;
+  z-index: 1;
 }
 
 .header_rightside {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .header-menu_list {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .header-menu_item {
   padding: 0 20px;
+  z-index: 1;
 }
 
 .header-menu_link {
@@ -111,6 +175,7 @@ ul {
   display: inline-flex;
   position: relative;
   transition: .3s;
+  z-index: 1;
 }
 
 .header-menu_linkAlt {
@@ -120,6 +185,7 @@ ul {
   display: inline-flex;
   position: relative;
   transition: .3s;
+  z-index: 1;
 }
 
 .header-menu_link:after {
@@ -132,6 +198,7 @@ ul {
   background: var(--primary-color);
   border-radius: 2px;
   transition: .3s;
+  z-index: 1;
 }
 
 .header-menu_link:hover:after {
@@ -167,6 +234,15 @@ ul {
   min-height: calc(80vh - 80px);
   display: flex;
   align-items: center;
+  font-weight: 500;
+  margin-bottom: 200px;
+}
+
+.skillsIntro {
+  min-height: calc(80vh - 80px);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
 }
 
 .intro_body {
@@ -181,6 +257,7 @@ ul {
   max-width: 500px;
   width: 100%;
   padding-right: 20px;
+  margin-right: 10%;
 }
 
 .intro_img {
@@ -194,7 +271,7 @@ ul {
 }
 
 .intro_title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 64px;
   line-height: 1.2;
   color: var(--text-color);
@@ -206,6 +283,18 @@ ul {
 .intro_title span {
   color: var(--primary-color);
   transition: .3s;
+}
+
+.intro_position {
+  display: block;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--gray-color);
+  margin-bottom: 25px;
+}
+
+.is-black .intro_position {
+  color: var(--white-color)
 }
 
 .intro_position {
@@ -243,19 +332,25 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 0;
+  padding: 30px 150px;
   position: relative;
+  height: auto;
 }
 
 .skills_content {
   max-width: 500px;
   width: 100%;
   padding-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 25%;
 }
-
+/* Have two elements align side by side and collapse to columns when shrinking width */
 .skills_img {
   max-width: 500px;
   width: 100%;
+    display: inline-block;
 }
 
 .skills_img img {
@@ -385,18 +480,20 @@ justify-content: center;
 }
 .slider {
 background: none;
-height: 100px;
+height: 200px;
 margin: auto;
 overflow: hidden;
-position: relative;
-width: 480px;
-justify-content: right;
+position: absolute;
+width: 35%;
+justify-content: center;
+display: block;
 }
+
 .slider::before, .slider::after {
 background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
 height: 100px;
 position: absolute;
-width: 200px;
+width: 150px;
 z-index: 2;
 }
 .slider::after {
@@ -418,6 +515,17 @@ width: calc(125px * 6);
 height: 100px;
 width: 250px;
 }
+
+.skills_stats {
+  background: none;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 360px;
+  justify-content: right;
+  }
+
 
 /* Black Styles */
 
@@ -484,105 +592,6 @@ body.is-black {
   color: var(--invert-text-color);
 }
 
-/* Media Queries */
-
-@media (max-width: 1023px) {
-  .header-menu_link {
-    font-size: 16px;
-  }
-  .header_logo {
-    font-size: 24px;
-  }
-  .intro_title {
-    font-size: 60px;
-  }
-  .intro_position {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  .intro_text {
-    font-size: 16px;
-    margin-bottom: 20 px;
-  }
-  .intro-soc {
-    margin-top: 20px;
-  }
-  .btn {
-    font-size: 14px;
-  }
-  .btn .bx {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 767px) {
-  .header {
-    padding: 20px 0;
-  }
-  .intro {
-    min-height: calc(100vh - 69px);
-  }
-  .header-menu {
-    position: fixed;
-    top: 69px;
-    left: 100%;
-    width: 100%;
-    height: calc(100vh - 69px);
-    background: rgba(255,255,255,.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
-  }
-  .header-menu.is-active {
-    left: 0;
-  }
-  .header-menu_list {
-    flex-direction: column;
-  }
-  .header_mob {
-    display: block;
-  }
-  .is-black .header-menu {
-    background: rgba(0,0,0,.8);
-  }
-  .header-menu_item:not(:last-child) {
-    margin-bottom: 20px;
-  }
-  .header-menu_link {
-    font-size: 24px;
-  }
-  .intro_body {
-    flex-direction: column-reverse;
-  }
-  .intro_img {
-    margin-bottom: 30px;
-  }
-  .intro_content {
-    padding: 0;
-  }
-  .intro_title {
-    font-size: 32px;
-    text-align: center;
-  }
-  .intro_position {
-    text-align: center;
-  }
-  .intro_text {
-    text-align: center;
-  }
-  .intro_btn {
-    display: flex;
-    justify-content: center;
-  }
-  .intro-soc {
-    justify-content: center;
-  }
-}
-
-.padding{
-  padding: 30px;
-}
 /*
 .carousel{
 scroll-snap-type: x mandatory;
@@ -692,3 +701,370 @@ scroll-padding: 0 24px;
   }
 }
   /* colors to use #ED4D6E (red), #C3BEF7 (lilac), #FBB13C (orange), #0C120C (black chocolate, p nice), #454545 onix, #187795 teal blue */
+
+/* create a bar that animates from left to right to a certain point */
+
+.containerBar{
+  width: 100%;
+  margin: 0 auto;
+  top:0; right:0; 
+}
+.containerBar_flex {
+  max-width: 1100px;
+  padding:  10px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--invert-bg-color);
+  font-weight: 900;
+
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: var(--primary-color);
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before{
+  background-color: var(--primary-color);
+}
+.bar.back::before{
+  background-color: #FBB13C;
+}
+
+.bar.learning::before{
+  width: calc(40% - 10px);
+}
+.bar.basic::before{
+  width: calc(60% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(70% - 10px);
+}
+.bar.advanced::before{
+  width: calc(90% - 10px);
+}
+.bar.expert::before{
+  width: calc(100% - 10px);
+}
+
+/* Typewriter effect CODE: https://www.codeply.com/go/orizmNWvT3/css-only-typing-animation-with-multiple-words */
+  .typewriter {
+    display: flexbox;
+}
+
+.typewriter .static {
+    color: var(--text-color);
+    font-size: 48px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.is-black .typewriter .static {
+    color: white;
+    font-size: 48px;
+    font-weight: 500;
+}
+.typewriter span {
+    color: #7ede90;
+    font-weight: 800;
+    width: 100%;
+}
+
+.typewriter span1 {
+    color: #fbb13c;
+    font-weight: 800;
+    width: 100%;
+}
+
+
+.typewriter .types{
+    line-height: 90px;
+    height: 80px;
+    overflow: hidden; 
+    margin-top: -10px;
+    margin-right: 50px;
+}
+
+.types li{
+    list-style: none;
+    font-weight: 800;
+    font-size: 48px;
+    position:relative;
+    top: 0;
+    animation: slide 16s steps(4)
+    infinite;
+    }
+
+.types li {
+    position: relative;
+}
+
+.types li::after{
+    content: "";
+    position:absolute;
+    font-size: 36px;
+    height: 100%;
+    width: 100%;
+    animation: typing 4s steps(17) 
+    infinite;
+    border-left: 3px solid #fbb13c;
+    left: 0;
+    background: white;
+    }
+
+.is-black .types li::after{
+    content: "";
+    position:absolute;
+    font-size: 36px;
+    height: 100%;
+    width: 100%;
+    animation: typing 4s steps(17) 
+    infinite;
+    border-left: 3px solid #fbb13c;
+    left: 0;
+    background: var(--invert-bg-color);
+        }
+
+
+/* Three evenly spaced boxes that are centered center. Each box will have an icon, number, and description */
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 5rem 5rem;
+}
+
+.icon-box .box {
+  flex: 1 1 300px;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.icon-box .box:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box .box .icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fbb13c;
+}
+
+  /* The typing effect */
+  @keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
+  }
+
+  @keyframes slide{
+    100%{
+        top: -360px;
+    }
+  }
+
+
+/* Media Queries */
+
+@media (max-width: 1023px) {
+  .header-menu_link {
+    font-size: 16px;
+  }
+  .header_logo {
+    font-size: 24px;
+  }
+  .intro_title {
+    font-size: 60px;
+  }
+  .intro_position {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .intro_text {
+    font-size: 16px;
+    margin-bottom: 20 px;
+  }
+  .intro-soc {
+    margin-top: 20px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+  .btn .bx {
+    font-size: 20px;
+  }
+  .typewriter {
+    display: flexbox;
+    justify-content: center;
+}
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 20px 0;
+  }
+  .intro {
+    min-height: calc(100vh - 69px);
+  }
+  .header-menu {
+    position: fixed;
+    top: 69px;
+    left: 100%;
+    width: 100%;
+    height: calc(100vh - 69px);
+    background: rgba(255,255,255,.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+  }
+  .header-menu.is-active {
+    left: 0;
+  }
+  .header-menu_list {
+    flex-direction: column;
+  }
+  .header_mob {
+    display: block;
+  }
+  .is-black .header-menu {
+    background: rgba(0,0,0,.8);
+  }
+  .header-menu_item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .header-menu_link {
+    font-size: 24px;
+  }
+  .intro_body {
+    flex-direction: column-reverse;
+  }
+  .intro_img {
+    margin-bottom: 30px;
+  }
+  .intro_content {
+    padding: 0;
+  }
+  .intro_title {
+    font-size: 32px;
+    text-align: center;
+  }
+  .intro_position {
+    text-align: center;
+  }
+  .intro_text {
+    text-align: center;
+  }
+  .intro_btn {
+    display: flex;
+    justify-content: center;
+  }
+  .intro-soc {
+    justify-content: center;
+  }
+  .skills_body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .typewriter {
+    margin: 0 17.5%;
+}
+}
+
+.padding{
+  padding: 30px;
+}
+
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px; /* negative margin of half the gutter width to compensate for the gutter */
+}
+
+.item {
+  width: calc(50% - 20px); /* 50% of the container width minus the gutter width */
+  max-width: 300px;
+  margin: 10px; /* gutter width */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* slight drop shadow */
+  transition: all 0.3s ease; /* smooth transition on hover */
+}
+
+.item:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* stronger drop shadow on hover */
+  transform: scale(1.05); /* slight zoom on hover */
+}
+
+.item img {
+  width: 100%; /* image should fill the entire item */
+  height: auto;
+}
+
+.item .description {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.8); /* semi-transparent white background for the text */
+  color: #333; /* dark text color */
+  visibility: hidden; /* hide the text by default */
+  opacity: 0; /* make the text invisible by default */
+  transition: all 0.3s ease; /* smooth transition on hover */
+  display: flex; /* enable flexbox layout */
+  align-items: center; /* center items vertically */
+  justify-content: center; /* center items horizontally */
+  font-weight: bold;
+}
+
+.item:hover .description {
+  visibility: visible; /* show the text on hover */
+  opacity: 1; /* make the text visible on hover */
+}
